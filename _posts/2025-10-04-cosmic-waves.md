@@ -1,32 +1,11 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Psychedelic Evolving Art</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: #000;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    canvas {
-      display: block;
-      background: #000;
-      box-shadow: 0 0 40px 20px #111;
-    }
-  </style>
-</head>
-<body>
-  <canvas id="psychedelic"></canvas>
+---
+layout: fullscreen
+title: Psychedelic Evolving Art
+tags:
+  - graphics
+---
+
+<canvas id="psychedelic" style="width:100vw; height:100vh; display:block; position:fixed; top:0; left:0;"></canvas>
   <script>
     const canvas = document.getElementById('psychedelic');
     const ctx = canvas.getContext('2d');
@@ -112,6 +91,3 @@
       setTimeout(()=>canvas.style.filter = "", 300);
     });
   </script>
-</body>
-</html>
-```
