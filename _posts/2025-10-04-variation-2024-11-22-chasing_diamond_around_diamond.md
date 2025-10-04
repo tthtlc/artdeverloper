@@ -5,6 +5,11 @@ tags:
   - graphics
 ---
 
+        canvas {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
 <canvas id="psychedelicCanvas" width="700" height="700"></canvas>
 
 <script>
