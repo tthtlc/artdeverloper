@@ -5,20 +5,6 @@ tags:
   - graphics, graphics, digital arts, mathematical art, Javascript
 ---
 
-<style>
-/* Hide Jekyll layout elements for fullscreen effect */
-.navbar, .intro-header, .post-container, .sidebar-container, footer {
-  display: none !important;
-}
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: black;
-    }
-    canvas {
-      display: block;
-    }
-</style>
 <canvas id="canvas"></canvas>
 <script>
 const canvas = document.getElementById("canvas");

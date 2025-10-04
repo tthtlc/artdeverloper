@@ -6,33 +6,6 @@ tags:
 date: 2025-01-04
 ---
 
-<style>
-/* Hide Jekyll layout elements for fullscreen effect */
-.navbar, .intro-header, .post-container, .sidebar-container, footer {
-  display: none !important;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #160036;
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-canvas {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-  cursor: crosshair;
-  background: radial-gradient(circle at 50% 50%, #3e006e 0%, #0a0020 100%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-</style>
-
 <canvas id="psychedelic"></canvas>
 
 <script>
