@@ -5,72 +5,8 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychedelic Sunflower Moiré Animation</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: radial-gradient(ellipse at center, #111 0%, #2f004f 100%);
-        }
-        .url-container {
-            position: absolute;
-            top: 8px;
-            text-align: center;
-            width: 100%;
-            font-size: 1.1em;
-            color: #a8d8ef;
-            text-shadow: 0 0 10px #111a, 0 1px 0 #fff9;
-        }
-        canvas {
-            background: rgba(12, 1, 34, 0.92);
-            border: 2px solid #6ae0eb;
-            box-shadow: 0 0 44px #0ff3, 0 0 6px #fff6 inset;
-            border-radius: 12px;
-        }
-        .controls {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 14px;
-            margin-top: 12px;
-        }
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        label {
-            color: #eecfff;
-            font-size: 1em;
-            margin-bottom: 2px;
-            letter-spacing: 0.03em;
-        }
-        input[type="range"] {
-            width: 90px;
-        }
-        span {
-            color: #a1f7c8;
-            font-family: monospace;
-            font-size: 0.97em;
-        }
-    </style>
-</head>
-<body>
-    <div class="url-container">
-        <a href="https://dev.to/tthtlc/mathematical-art-from-vortex-parametric-equation-4icj" style="color:#99eeff;">Modified Sunflower Moiré by Creative Coding AI</a>
-    </div>
-    <canvas id="canvas" width="800" height="800"></canvas>
-    <div class="controls">
+<canvas id="canvas" width="800" height="800"></canvas>
+<div class="controls">
         <div class="control-group">
             <label for="petals">Petals:</label>
             <input type="range" id="petals" min="5" max="32" step="1" value="16">
@@ -91,7 +27,7 @@ tags:
             <input type="checkbox" id="colorize" checked>
         </div>
     </div>
-    <script>
+<script>
         document.addEventListener("contextmenu", function(event) { event.preventDefault(); });
 
         // ======= Controls =======
@@ -218,8 +154,4 @@ tags:
 
         // ======= Start =======
         requestAnimationFrame(animate);
-
-    </script>
-</body>
-</html>
-```
+</script>
