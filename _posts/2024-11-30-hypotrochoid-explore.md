@@ -32,8 +32,8 @@ tags:
             font-weight: bold;
         }
 </style>
-<canvas id="canvas" width="600" height="600"></canvas>
 <div class="controls">
+	<canvas id="canvas" width="600" height="600"></canvas>
         <div class="control-group">
             <label for="R">R (Outer radius):</label>
             <input type="range" id="R" min="50" max="300" value="240">
