@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaleidoscopic Particle Spirals</title>
-  <style>
+<style>
     html, body {
       height: 100%;
       margin: 0;
@@ -59,11 +52,9 @@ tags:
       margin-left:6px;
       font-family: monospace;
     }
-  </style>
-</head>
-<body>
-  <canvas id="spiralCanvas" width="640" height="640"></canvas>
-  <div class="controls">
+</style>
+<canvas id="spiralCanvas" width="640" height="640"></canvas>
+<div class="controls">
     <div class="slider">
       <span class="label">Spirals:</span>
       <input type="range" id="armControl" min="3" max="16" value="6">
@@ -246,7 +237,4 @@ tags:
 
     // Initial paint
     loop();
-  </script>
-</body>
-</html>
-```
+</script>

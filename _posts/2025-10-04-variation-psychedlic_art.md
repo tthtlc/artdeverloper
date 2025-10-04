@@ -5,13 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Psychedelic Hexagonal Wave Vortex</title>
-  <style>
+<style>
     body {
       margin: 0;
       overflow: hidden;
@@ -20,9 +14,7 @@ tags:
     canvas {
       display: block;
     }
-  </style>
-</head>
-<body>
+</style>
 <canvas id="canvas"></canvas>
 <script>
 const canvas = document.getElementById("canvas");
@@ -121,6 +113,3 @@ function draw() {
 }
 draw();
 </script>
-</body>
-</html>
-```

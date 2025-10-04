@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hypnotic Flower Pulse with Radiant Cycling Petals</title>
-  <style>
+<style>
     #container {
       position: relative;
       width: 500px;
@@ -43,10 +36,8 @@ tags:
     body {
       background: #111115;
     }
-  </style>
-</head>
-<body>
-  <div id="container">
+</style>
+<div id="container">
     <canvas id="canvas" width="500" height="500"></canvas>
   </div>
   
@@ -60,8 +51,7 @@ tags:
     <label>
       Speed: <input type="range" id="speedSlider" min="0.001" max="0.05" step="0.001" value="0.017">
     </label>
-  </div>
-  
+</div>
 <script>
   document.addEventListener("contextmenu", function(event) { event.preventDefault(); });
 
@@ -220,6 +210,3 @@ tags:
 
   draw();
 </script>
-</body>
-</html>
-```

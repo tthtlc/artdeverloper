@@ -5,13 +5,6 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psychedelic Hypnotic Waves with Chromatic Orbits</title>
   <style>
     #container {
       position: relative;
@@ -57,10 +50,7 @@ tags:
     .footer-link a:hover { 
       text-decoration: underline; 
     } 
-    body { background: radial-gradient(#222b44, #0d1020 90%); }
-  </style>
-</head>
-<body>
+</style>
   <div id="container">
     <canvas id="mainCanvas" width="500" height="500"></canvas>
     <canvas id="trailCanvas" width="500" height="500"></canvas>
@@ -261,8 +251,4 @@ var gitalk = new Gitalk({
   distractionFreeMode: true,
   id: md5(location.pathname),
 });
-gitalk.render('gitalk-container');
 </script>
-</body>
-</html>
-```

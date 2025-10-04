@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radiant Psychedelic Flower Petal Waves</title>
-  <style>
+<style>
     body {
       background: radial-gradient(ellipse at center, #0a0026 0%, #111 100%);
       display: flex;
@@ -49,19 +42,17 @@ tags:
       text-align: right;
       display: inline-block;
     }
-  </style>
-</head>
-<body>
-  <canvas id="flowerCanvas" width="700" height="700"></canvas>
-  <div class="controls">
+</style>
+<canvas id="flowerCanvas" width="700" height="700"></canvas>
+<div class="controls">
     <span class="label">Petals:</span>
     <input type="range" id="petalControl" min="4" max="18" value="8">
     <span id="petalValue" class="slider-value">8</span>
     <span class="label" style="margin-left:2em;">Waves:</span>
     <input type="range" id="waveControl" min="2" max="24" value="6">
     <span id="waveValue" class="slider-value">6</span>
-  </div>
-  <script>
+</div>
+<script>
     // Canvas/ctx
     const canvas = document.getElementById('flowerCanvas');
     const ctx = canvas.getContext('2d');
@@ -236,7 +227,4 @@ tags:
     }
 
     requestAnimationFrame(animate);
-  </script>
-</body>
-</html>
-```
+</script>

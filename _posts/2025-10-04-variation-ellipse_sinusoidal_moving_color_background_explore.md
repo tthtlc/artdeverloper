@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=800, initial-scale=1.0">
-  <title>Flowing Psychedelic Moiré Spirals</title>
-  <style>
+<style>
     body {
       display: flex;
       flex-direction: column;
@@ -41,11 +34,9 @@ tags:
     .slider-value, .dropdown {
       margin-left: 6px;
     }
-  </style>
-</head>
-<body>
-  <canvas id="spiralCanvas" width="720" height="720"></canvas>
-  <div class="controls">
+</style>
+<canvas id="spiralCanvas" width="720" height="720"></canvas>
+<div class="controls">
     <span class="label">Spiral Count:</span>
     <input type="range" min="1" max="12" value="5" id="spiralCountRange">
     <span id="spiralCountValue" class="slider-value">5</span>
@@ -72,8 +63,8 @@ tags:
         <option value="difference">Difference</option>
       </select>
     </div>
-  </div>
-  <script>
+</div>
+<script>
     const canvas = document.getElementById('spiralCanvas');
     const ctx = canvas.getContext('2d');
     const w = canvas.width, h = canvas.height;
@@ -234,7 +225,4 @@ tags:
 
     // Start!
     animate();
-  </script>
-</body>
-</html>
-```
+</script>

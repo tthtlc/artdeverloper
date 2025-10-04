@@ -4,15 +4,7 @@ title: Hypnotic Quantum Rosefield
 tags:
   - graphics
 ---
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hypnotic Quantum Rosefield</title>
-    <style>
+<style>
         body {
             display: flex;
             flex-direction: column;
@@ -77,11 +69,9 @@ tags:
             background: #88fedd;
             color: #222;
         }
-    </style>
-</head>
-<body>
-    <canvas id="canvas" width="640" height="640"></canvas>
-    <div class="controls">
+</style>
+<canvas id="canvas" width="640" height="640"></canvas>
+<div class="controls">
         <div class="control-group">
             <label for="layers">Number of Layers:</label>
             <input type="range" id="layers" min="2" max="10" value="5">
@@ -112,10 +102,10 @@ tags:
                 <option value="rainbow">Rainbow Rings</option>
             </select>
         </div>
-        <canvas id="paletteBar"></canvas>
-        <button id="saveButton">Save as PNG</button>
-    </div>
-    <script>
+<canvas id="paletteBar"></canvas>
+<button id="saveButton">Save as PNG</button>
+</div>
+<script>
         // Util Functions
         function lerp(a, b, t) {
             return a + (b - a) * t;
@@ -309,7 +299,4 @@ tags:
 
         // Prevent right click context menu
         document.addEventListener('contextmenu', e => e.preventDefault());
-    </script>
-</body>
-</html>
-```
+</script>

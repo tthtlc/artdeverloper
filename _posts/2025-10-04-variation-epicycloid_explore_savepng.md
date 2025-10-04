@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychedelic Harmonic Wave Fields with Color Trails</title>
-    <style>
+<style>
         body {
             margin: 0;
             background: #000;
@@ -77,11 +70,8 @@ tags:
             background: #f7c23e;
             color: #181830;
         }
-    </style>
-</head>
-<body>
+</style>
 <canvas id="canvas" width="720" height="600"></canvas>
-
 <div class="controls">
     <div class="control-group">
         <label for="waves"># Harmonic Waves:</label>
@@ -115,7 +105,6 @@ tags:
     <canvas id="gradientCanvas" width="250" height="30" class="color-spectrum"></canvas>
     <button id="saveButton">Save as PNG</button>
 </div>
-
 <script>
 document.addEventListener("contextmenu", e => e.preventDefault());
 
@@ -262,6 +251,3 @@ document.getElementById('saveButton').addEventListener('click', ()=>{
 drawGradientBar();
 requestAnimationFrame(loop);
 </script>
-</body>
-</html>
-```

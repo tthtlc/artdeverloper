@@ -5,12 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Pulsating Lissajous Wave Petals</title>
-  <style>
+<style>
     html, body {
       margin: 0;
       padding: 0;
@@ -50,10 +45,8 @@ tags:
       border: 2px solid #24175a;
       display: block;
     }
-  </style>
-</head>
-<body>
-  <div class="controls" id="controls">
+</style>
+<div class="controls" id="controls">
     <div>
       <label for="freqX">X Frequency:</label>
       <input type="range" min="1" max="12" step="1" value="3" id="freqX" oninput="updateFreqX(this.value)">
@@ -74,10 +67,10 @@ tags:
       <input type="range" min="30" max="100" step="1" value="80" id="saturation" oninput="updateSaturation(this.value)">
       <span id="saturationVal">80</span>
     </div>
-  </div>
-  <canvas id="canv" width="720" height="640"></canvas>
+</div>
+<canvas id="canv" width="720" height="640"></canvas>
 
-  <script>
+<script>
     // Animation State
     let freqX = 3;
     let freqY = 5;
@@ -233,7 +226,4 @@ tags:
     document.getElementById("saturationVal").textContent = saturation;
 
     animate();
-  </script>
-</body>
-</html>
-```
+</script>

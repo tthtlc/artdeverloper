@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psychedelic Hypnotic Vortex with Morphing Colorful Spirals</title>
-  <style>
+<style>
     body {
       display: flex;
       flex-direction: column;
@@ -61,9 +54,9 @@ tags:
       <label class="label">Center Color:</label>
       <input type="color" id="centerColorPicker" value="#000000">
     </div>
-  </div>
+</div>
 
-  <script>
+<script>
     const canvas = document.getElementById('vortexCanvas');
     const ctx = canvas.getContext('2d');
     const W = canvas.width;
@@ -292,7 +285,4 @@ tags:
 
     // Start the animation!
     requestAnimationFrame(animate);
-  </script>
-</body>
-</html>
-```
+</script>

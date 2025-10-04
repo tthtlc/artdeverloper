@@ -5,13 +5,6 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=500, initial-scale=1.0">
-  <title>Psychedelic Harmonic Lissajous Waves with Color Trails</title>
   <style>
     #container {
       position: relative;
@@ -42,8 +35,7 @@ tags:
       width: 120px;
     }
   </style>
-</head>
-<body>
+
   <div id="container">
     <canvas id="canvas" width="500" height="500"></canvas>
     <canvas id="trailCanvas" width="500" height="500"></canvas>
@@ -213,6 +205,3 @@ tags:
   clearTrail();
   draw();
 </script>
-</body>
-</html>
-```

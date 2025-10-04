@@ -5,13 +5,6 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pulsing Psychedelic Hypnotunnel with Sine Rings</title>
   <style>
     body {
       margin: 0;
@@ -36,14 +29,6 @@ tags:
       width: 120px;
     }
   </style>
-</head>
-<body>
-  <div id="controls">
-    <label for="depth">Tunnel Depth:</label>
-    <input class="slider" type="range" id="depth" min="12" max="80" step="1" value="36"><br>
-    <label for="speed">Pulse Speed:</label>
-    <input class="slider" type="range" id="speed" min="0.2" max="2.5" step="0.01" value="0.9">
-  </div>
   <canvas id="psychedelia"></canvas>
   <script>
     const canvas = document.getElementById('psychedelia');
@@ -158,7 +143,4 @@ tags:
       requestAnimationFrame(animate);
     }
     animate();
-  </script>
-</body>
-</html>
-```
+</script>

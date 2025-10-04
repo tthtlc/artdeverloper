@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychedelic Möbius Flowfield</title>
-    <style>
+<style>
         body {
             display: flex;
             flex-direction: column;
@@ -81,11 +74,9 @@ tags:
         .share-links a:hover {
             color: #e21fff;
         }
-    </style>
-</head>
-<body>
-    <canvas id="animationCanvas" width="600" height="600"></canvas>
-    <div class="controls">
+</style>
+<canvas id="animationCanvas" width="600" height="600"></canvas>
+<div class="controls">
         <div>
             <label for="mobiusTwist">Möbius twist:</label>
             <input type="range" id="mobiusTwist" name="mobiusTwist" min="0" max="2" step="0.01" value="1">
@@ -352,7 +343,4 @@ document.getElementById('shareWhatsApp').addEventListener('click', function () {
     const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(dataURL)}`;
     this.href = whatsappShareUrl;
 });
-    </script>
-</body>
-</html>
-```
+</script>

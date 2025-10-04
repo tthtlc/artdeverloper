@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychedelic Lissajous Particle Vortex</title>
-    <style>
+<style>
         body {
             display: flex;
             justify-content: center;
@@ -57,11 +50,9 @@ tags:
             font-weight: bold;
             margin-top: -2px;
         }
-    </style>
-</head>
-<body>
-    <canvas id="canvas" width="800" height="800"></canvas>
-    <div class="controls">
+</style>
+<canvas id="canvas" width="800" height="800"></canvas>
+<div class="controls">
         <div class="control-group">
             <label for="lissA">Lissajous A:</label>
             <input type="range" id="lissA" min="1" max="10" step="0.01" value="3.00">
@@ -82,8 +73,8 @@ tags:
             <input type="range" id="count" min="30" max="300" step="1" value="106">
             <span id="value-count">106</span>
         </div>
-    </div>
-    <script>
+</div>
+<script>
         // For smooth color
         function hsl(h, s, l, a) {
             return `hsla(${h},${s}%,${l}%,${a})`;
@@ -224,7 +215,4 @@ tags:
         document.addEventListener("contextmenu", (e)=>{ e.preventDefault(); });
 
         // Responsiveness (optional): Not included for strict 800x800
-    </script>
-</body>
-</html>
-```
+</script>

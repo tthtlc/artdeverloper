@@ -5,12 +5,6 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Psychedelic Lissajous Waveform Spirals with Feedback Echoes</title>
 <style>
     html, body {
         width: 100vw;
@@ -79,8 +73,6 @@ tags:
     }
     #saveButton:hover { background: #5aaaff }
 </style>
-</head>
-<body>
 <canvas id="canvas" width="900" height="900"></canvas>
 <div class="controls">
 
@@ -252,6 +244,3 @@ document.getElementById('saveButton').onclick = function(){
 // Prevent context menu
 document.addEventListener("contextmenu", ev=>ev.preventDefault());
 </script>
-</body>
-</html>
-```
