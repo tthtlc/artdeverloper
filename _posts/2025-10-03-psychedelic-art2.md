@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: fullscreen
 title: "Psychedelic Art Generator"
 tags:
   - graphics, graphics, digital arts, mathematical art, Javascript
@@ -10,8 +10,6 @@ tags:
 .navbar, .intro-header, .post-container, .sidebar-container, footer {
   display: none !important;
 }
-
-<style>
     body {
       margin: 0;
       overflow: hidden;

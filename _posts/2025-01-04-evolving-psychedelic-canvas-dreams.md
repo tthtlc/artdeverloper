@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: fullscreen
 title: "Evolving Psychedelic Canvas Dreams"
 tags:
   - graphics
