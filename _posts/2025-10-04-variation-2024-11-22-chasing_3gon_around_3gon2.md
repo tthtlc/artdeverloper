@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Hypnotic Infinite Sine Blossom"
@@ -126,4 +125,3 @@ window.addEventListener('resize', ()=>{
 
 animate(0);
 </script>
-```

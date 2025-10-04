@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Quantum Waves: Interactive Lissajous Particle Tunnels"
@@ -311,4 +310,3 @@ document.getElementById("saveButton").addEventListener('click',function(){
 // Initial resize for full window
 window.dispatchEvent(new Event("resize"));
 </script>
-```

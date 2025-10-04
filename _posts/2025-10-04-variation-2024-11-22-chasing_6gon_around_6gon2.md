@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Hypnotic Pulsing Spiro-Waves"
@@ -142,4 +141,3 @@ ctx.fillRect(0,0,W,H);
 
 animate(0);
 </script>
-```

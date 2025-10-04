@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Shifting Waves of a Psychedelic Lissajous Garden"
@@ -140,4 +139,3 @@ canvas.onclick = () => {
 draw();
 
 </script>
-```

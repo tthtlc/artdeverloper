@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Radiant Spiro-Splash: Animated Waveforms & Particle Bursts"
@@ -208,4 +207,3 @@ function animate() {
 animate();
 
 </script>
-```

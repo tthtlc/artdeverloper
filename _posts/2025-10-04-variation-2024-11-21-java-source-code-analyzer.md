@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Spiro-Particle Vortex"
@@ -193,4 +192,3 @@ animate();
 * Drifting neon, spirograph-style vortices with radiant trails and fractal pulses behind.
 * Made with ♥ in generative JavaScript.
 -->
-```

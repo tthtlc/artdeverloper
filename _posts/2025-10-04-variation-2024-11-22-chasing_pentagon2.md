@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Waveform Lotus: Generative Oscillating Petals"
@@ -141,4 +140,3 @@ window.addEventListener('resize', () => {
 adjustCanvasSize();
 draw();
 </script>
-```

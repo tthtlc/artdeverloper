@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Oscillating Kaleidoscopic Star Web"
@@ -180,4 +179,3 @@ function animate() {
 }
 animate();
 </script>
-```

@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Fractal Wave Spirals"
@@ -121,4 +120,3 @@ function draw() {
 
 draw();
 </script>
-```

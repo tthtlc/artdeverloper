@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Rotating Waveform Orbs"
@@ -180,4 +179,3 @@ waveSlider.addEventListener('input', () => {
     waveComplexity = parseInt(waveSlider.value);
 });
 </script>
-```

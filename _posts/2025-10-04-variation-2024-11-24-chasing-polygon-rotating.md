@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Rippling Spirals"
@@ -125,4 +124,3 @@ function draw(){
 }
 draw();
 </script>
-```

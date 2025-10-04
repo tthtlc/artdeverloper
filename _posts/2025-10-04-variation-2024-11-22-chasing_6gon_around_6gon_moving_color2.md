@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Pulsing Mandala of Spiraling Waves and Neon Orbs"
@@ -149,4 +148,3 @@ function animate() {
 }
 animate();
 </script>
-```

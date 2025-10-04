@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Moiré Ripples"
@@ -162,4 +161,3 @@ function animate(now) {
 
 requestAnimationFrame(animate);
 </script>
-```

@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Flower Waves"
@@ -168,4 +167,3 @@ function drawPetalWave(cx, cy, baseRadius, maxOffset, petals, waves, time, ringN
 draw();
 
 </script>
-```

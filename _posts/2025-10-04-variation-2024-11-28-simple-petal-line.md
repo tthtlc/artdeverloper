@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "HypnoWaves - Psychedelic Interference Fields"
@@ -180,4 +179,3 @@ window.addEventListener('keydown', e=>{
 // Prevent right-click context menu
 window.addEventListener("contextmenu", e=>e.preventDefault());
 </script>
-```

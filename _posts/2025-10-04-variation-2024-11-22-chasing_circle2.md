@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Hypno-Waves on Parametric Rings"
@@ -202,4 +201,3 @@ function draw() {
 draw();
 
 </script>
-```

@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Waveweave"
@@ -101,4 +100,3 @@ ctx.fillRect(0,0,W,H);
 loop();
 
 </script>
-```

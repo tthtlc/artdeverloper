@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Hypnotic Spiral Waves"
@@ -136,4 +135,3 @@ window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
 });
 </script>
-```

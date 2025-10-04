@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Lissajous Particle Swarm - Trippy Trails"
@@ -216,4 +215,3 @@ function animate(now) {
 animate(performance.now());
 
 </script>
-```
