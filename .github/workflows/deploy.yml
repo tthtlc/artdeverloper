@@ -1,0 +1,36 @@
+name: Build and Deploy to www.artdeveloper.art
+
+on:
+  push:
+    branches:
+      - main  # or your deployment branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build the site
+        run: bundle exec jekyll build
+
+      - name: Deploy with rsync
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan www.artdeveloper.art >> ~/.ssh/known_hosts
+          rsync -avz --delete _site/ userweb@www.artdeveloper.art:/home/userweb/webroot
+    
