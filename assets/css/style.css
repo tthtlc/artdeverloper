@@ -225,3 +225,27 @@ body {
         padding: 1rem;
     }
 }
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+    canvas {
+        width: 800px;
+        height: 800px;
+    }
+}
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    canvas {
+        width: 90vw; /* Use 90% of viewport width */
+        height: 90vw; /* Square canvas */
+        max-width: 500px; /* Cap for larger mobile screens */
+        max-height: 500px;
+    }
+}
+
+

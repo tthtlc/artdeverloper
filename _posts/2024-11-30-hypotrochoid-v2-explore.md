@@ -11,7 +11,6 @@ tags:
         margin: 0 auto;
         border: 1px solid black;
     }
-
     /* Desktop styles */
     @media screen and (min-width: 768px) {
         canvas {
@@ -19,7 +18,6 @@ tags:
             height: 800px;
         }
     }
-
     /* Mobile styles */
     @media screen and (max-width: 767px) {
         canvas {
