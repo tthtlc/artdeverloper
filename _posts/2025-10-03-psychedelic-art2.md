@@ -6,6 +6,12 @@ tags:
 ---
 
 <style>
+/* Hide Jekyll layout elements for fullscreen effect */
+.navbar, .intro-header, .post-container, .sidebar-container, footer {
+  display: none !important;
+}
+
+<style>
     body {
       margin: 0;
       overflow: hidden;
