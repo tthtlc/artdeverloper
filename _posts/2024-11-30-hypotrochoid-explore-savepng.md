@@ -6,9 +6,11 @@ tags:
 ---
 
 <style>
-        canvas {
-            border: 1px solid black;
-        }
+    canvas {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid black;
+    }
         .controls {
             margin-top: 20px;
             display: flex;
