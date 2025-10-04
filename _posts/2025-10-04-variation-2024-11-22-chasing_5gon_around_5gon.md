@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Spiral Web of Interlaced Waves"
@@ -121,4 +120,3 @@ function animate() {
 animate();
 
 </script>
-```

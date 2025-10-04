@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Radial Wave Bloom"
@@ -158,4 +157,3 @@ function animate(ts) {
 
 animate();
 </script>
-```

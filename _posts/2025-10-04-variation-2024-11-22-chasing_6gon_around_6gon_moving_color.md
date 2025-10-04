@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Radiant Waves: Nested Pulsating Flower of Life"
@@ -118,4 +117,3 @@ window.addEventListener("resize",()=>{
 window.dispatchEvent(new Event("resize"));
 requestAnimationFrame(animate);
 </script>
-```

@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Spiral Waveform Blossoms"
@@ -116,4 +115,3 @@ function draw() {
 
 draw();
 </script>
-```

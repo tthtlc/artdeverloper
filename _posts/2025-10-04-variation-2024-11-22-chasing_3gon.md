@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Hypnotic Waveform Spirals"
@@ -123,4 +122,3 @@ function animate(ts) {
 }
 requestAnimationFrame(animate);
 </script>
-```

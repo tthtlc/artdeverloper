@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Ripple Flowers: Generative Waves in a Circle"
@@ -241,4 +240,3 @@ span {
   .controls { max-width: 99vw; }
 }
 </style>
-```

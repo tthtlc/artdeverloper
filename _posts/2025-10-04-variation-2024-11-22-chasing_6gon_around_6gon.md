@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Fractal Sunburst: Blooming Rhythmic Circles"
@@ -140,4 +139,3 @@ function animate() {
 }
 animate();
 </script>
-```

@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Hypnotic Lissajous Nebula"
@@ -167,4 +166,3 @@ canvas.addEventListener('pointermove', e => {
 });
 canvas.addEventListener('pointerleave', e=> ctx.setTransform(1,0,0,1,0,0));
 </script>
-```

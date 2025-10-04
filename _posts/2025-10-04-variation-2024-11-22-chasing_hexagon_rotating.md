@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: fullscreen
 title: "Psychedelic Wave Vortex with Colorful Particles"
@@ -134,4 +133,3 @@ ctx.fillRect(0, 0, W, H);
 
 animate();
 </script>
-```
