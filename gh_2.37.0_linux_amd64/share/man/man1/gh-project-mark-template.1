@@ -1,0 +1,46 @@
+.nh
+.TH "GH-PROJECT-MARK-TEMPLATE" "1" "Oct 2023" "GitHub CLI 2.37.0" "GitHub CLI manual"
+
+.SH NAME
+.PP
+gh-project-mark-template - Mark a project as a template
+
+
+.SH SYNOPSIS
+.PP
+\fB\fCgh project mark-template [<number>] [flags]\fR
+
+
+.SH OPTIONS
+.TP
+\fB\fC--format\fR \fB\fC<string>\fR
+Output format: {json}
+
+.TP
+\fB\fC--owner\fR \fB\fC<string>\fR
+Login of the org owner.
+
+.TP
+\fB\fC--undo\fR
+Unmark the project as a template.
+
+
+.SH EXAMPLE
+.PP
+.RS
+
+.nf
+# mark the github org's project "1" as a template
+gh project mark-template 1 --owner "github"
+
+# unmark the github org's project "1" as a template
+gh project mark-template 1 --owner "github" --undo
+
+
+.fi
+.RE
+
+
+.SH SEE ALSO
+.PP
+\fB\fCgh-project(1)\fR
