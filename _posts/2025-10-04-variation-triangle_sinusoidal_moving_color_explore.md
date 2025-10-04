@@ -5,14 +5,7 @@ tags:
   - graphics
 ---
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psychedelic Pulsating Hex Web</title>
-  <style>
+<style>
     body {
       margin: 0;
       background: #090017;
@@ -49,9 +42,7 @@ tags:
       color: #faf0ff;
       font-family: 'Fira Mono', monospace;
     }
-  </style>
-</head>
-<body>
+</style>
   <canvas id="hexCanvas" width="630" height="630"></canvas>
   <div class="controls">
     <div>
@@ -278,7 +269,4 @@ tags:
     // Initial draw
     draw();
     animate();
-  </script>
-</body>
-</html>
-```
+</script>
