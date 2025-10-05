@@ -157,6 +157,7 @@ tags:
           document.getElementById('petals-value').innerText = petals;
           document.getElementById('particles-value').innerText = particles;
           document.getElementById('quantum-value').innerText = quantum;
+	  drawQuantumRosefield();
         }
 
         document.getElementById('layers').addEventListener('input', function() {
