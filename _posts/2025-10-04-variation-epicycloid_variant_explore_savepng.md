@@ -288,7 +288,6 @@ tags:
             drawQuantumRosefield();
             requestAnimationFrame(animate);
         }
-        animate();
 
         document.getElementById('saveButton').addEventListener('click', ()=>{
             let link = document.createElement('a');
@@ -299,4 +298,8 @@ tags:
 
         // Prevent right click context menu
         document.addEventListener('contextmenu', e => e.preventDefault());
+	// Replace the immediate animate() call with:
+	document.addEventListener('DOMContentLoaded', function() {
+    		animate();
+	});
 </script>
