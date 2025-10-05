@@ -2,7 +2,7 @@
 title: Psychedelic Canvas Dreams
 description: "A Jekyll site featuring interactive psychedelic canvas art"
 baseurl: ""
-url: ""
+url: "https://www.artdeveloper.art"
 
 # Build settings
 markdown: kramdown
@@ -12,12 +12,16 @@ permalink: /:categories/:year/:month/:day/:title/
 # Collections
 collections:
   posts:
-    output: false
+    output: true
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/page:num/"
 
 # Exclude files from processing
 exclude:
