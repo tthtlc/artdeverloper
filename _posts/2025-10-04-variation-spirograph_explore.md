@@ -5,12 +5,13 @@ tags:
   - graphics
 ---
 
-  <style>
+<style>
     #container {
       position: relative;
       width: 500px;
       height: 500px;
       margin: auto;
+      margin-bottom: 30px;
     }
     canvas {
       position: absolute;
@@ -21,26 +22,27 @@ tags:
       z-index: 1;
     }
     #controls {
-      margin-top: 22px;
       display: flex;
       flex-direction: row;
       justify-content: center;
       gap: 20px;
+      margin-top: 0;
     }
     #controls label {
       font-family: monospace;
       font-size: 15px;
+      color: #f0f0f0;
     }
     input[type=range] {
       width: 120px;
     }
-  </style>
+</style>
 
-  <div id="container">
-    <canvas id="canvas" width="500" height="500"></canvas>
-    <canvas id="trailCanvas" width="500" height="500"></canvas>
-  </div>
-  <div id="controls">
+<div id="container">
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<canvas id="trailCanvas" width="500" height="500"></canvas>
+</div>
+<div id="controls">
     <label>
       <span>freqA:</span> <input type="range" id="freqASlider" min="1" max="8" step="1" value="3">
     </label>
@@ -58,7 +60,7 @@ tags:
         <option value="ripple">Ripple</option>
       </select>
     </label>
-  </div>
+</div>
 <script>
   document.addEventListener("contextmenu", e => e.preventDefault());
 
