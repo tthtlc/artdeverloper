@@ -26,7 +26,7 @@ tags:
             <label for="colorize">Color:</label>
             <input type="checkbox" id="colorize" checked>
         </div>
-    </div>
+</div>
 <script>
         document.addEventListener("contextmenu", function(event) { event.preventDefault(); });
 
