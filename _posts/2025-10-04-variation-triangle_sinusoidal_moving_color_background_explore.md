@@ -109,7 +109,7 @@ tags:
       ctx.save();
       ctx.globalAlpha = alpha;
       ctx.globalCompositeOperation = "lighter";
-      ctx.fillStyle = "#000001";
+      ctx.fillStyle = "#f0f0f1";
       ctx.fillRect(0, 0, W, H);
       ctx.restore();
     }
