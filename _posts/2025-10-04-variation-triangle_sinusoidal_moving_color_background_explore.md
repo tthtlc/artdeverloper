@@ -29,12 +29,10 @@ tags:
     .slider-value, .dropdown {
       margin-left: 10px;
     }
-  </style>
-</head>
-<body>
-  <canvas id="vortexCanvas" width="700" height="700"></canvas>
-  <!-- Controls -->
-  <div class="controls">
+</style>
+<canvas id="vortexCanvas" width="700" height="700"></canvas>
+<!-- Controls -->
+<div class="controls">
     <span class="label">Spirals:</span>
     <input type="range" id="spiralControl" min="2" max="16" value="7">
     <span id="spiralValue" class="slider-value">7</span>
