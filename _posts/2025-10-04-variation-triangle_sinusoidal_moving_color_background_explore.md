@@ -50,7 +50,7 @@ tags:
     </div>
     <div class="dropdown">
       <label class="label">Center Color:</label>
-      <input type="color" id="centerColorPicker" value="#000000">
+      <input type="color" id="centerColorPicker" value="#fff0f0">
     </div>
 </div>
 
