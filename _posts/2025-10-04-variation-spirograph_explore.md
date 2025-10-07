@@ -11,6 +11,7 @@ tags:
       width: 500px;
       height: 500px;
       margin: auto;
+      margin-bottom: 30px;
     }
     canvas {
       position: absolute;
@@ -21,18 +22,23 @@ tags:
       z-index: 1;
     }
     #controls {
-      margin-top: 22px;
       display: flex;
       flex-direction: row;
       justify-content: center;
       gap: 20px;
+      margin-top: 0;
     }
     #controls label {
       font-family: monospace;
       font-size: 15px;
+      color: #f0f0f0;
     }
     input[type=range] {
       width: 120px;
+    }
+    select {
+      font-family: monospace;
+      font-size: 14px;
     }
   </style>
 
