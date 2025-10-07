@@ -36,6 +36,10 @@ tags:
     input[type=range] {
       width: 120px;
     }
+    select {
+      font-family: monospace;
+      font-size: 14px;
+    }
 </style>
 
 <div id="container">
