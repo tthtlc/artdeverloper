@@ -70,7 +70,7 @@ tags:
     let radialBlur = true;
 
     // Center color
-    let centerColor = "#000000";
+    let centerColor = "#fffff0";
 
     // Palettes
     const palettes = {
