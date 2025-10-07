@@ -5,7 +5,46 @@ tags:
   - graphics
 ---
 
-<canvas id="canvas" width="800" height="800"></canvas>
+<style>
+    body {
+        background: radial-gradient(circle, #18082c 0%, #00061c 100%);
+        margin: 0;
+    }
+    canvas {
+        display: block;
+        margin: 32px auto;
+        background: transparent;
+        border-radius: 16px;
+        box-shadow: 0 0 32px rgba(80,30,150,0.45);
+    }
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+    .control-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #f0e9fe;
+        font-family: 'Fira Mono', monospace;
+        font-size: 1.1em;
+    }
+    label {
+        letter-spacing: 1px;
+        margin-bottom: 2px;
+    }
+    input[type="range"] {
+        width: 200px;
+    }
+    #canvas {
+        background: transparent;
+        border: 1.5px solid #5d39f7;
+    }
+</style>
+
 <div class="controls">
         <div class="control-group">
             <label for="petals">Petals:</label>
@@ -27,6 +66,7 @@ tags:
             <input type="checkbox" id="colorize" checked>
         </div>
 </div>
+<canvas id="canvas" width="800" height="800"></canvas>
 <script>
         document.addEventListener("contextmenu", function(event) { event.preventDefault(); });
 
