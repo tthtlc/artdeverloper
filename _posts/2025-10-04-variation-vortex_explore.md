@@ -7,44 +7,42 @@ tags:
 
 <style>
     body {
-        background: radial-gradient(circle, #18082c 0%, #00061c 100%);
-        margin: 0;
+      margin: 0;
+      background: #090017;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
     canvas {
-        display: block;
-        margin: 32px auto;
-        background: transparent;
-        border-radius: 16px;
-        box-shadow: 0 0 32px rgba(80,30,150,0.45);
+      box-shadow: 0 0 24px #000b,
+                  0 0 0 2px #0008;
+      background: #110031;
+      border-radius: 14px;
+      display: block;
+      margin-top: 30px;
     }
     .controls {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 8px;
+      margin-top: 20px;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
     }
-    .control-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #f0e9fe;
-        font-family: 'Fira Mono', monospace;
-        font-size: 1.1em;
+    .label {
+      color: #fdfdfd;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-right: 7px;
+      font-family: 'Fira Mono', monospace;
+      font-size: 1.1em;
     }
-    label {
-        letter-spacing: 1px;
-        margin-bottom: 2px;
-    }
-    input[type="range"] {
-        width: 200px;
-    }
-    #canvas {
-        background: transparent;
-        border: 1.5px solid #5d39f7;
+    .slider-value {
+      margin-left: 7px;
+      color: #faf0ff;
+      font-family: 'Fira Mono', monospace;
     }
 </style>
-
 <div class="controls">
         <div class="control-group">
             <label for="petals">Petals:</label>
