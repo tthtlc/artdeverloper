@@ -14,7 +14,6 @@ tags:
       margin-bottom: 30px;
     }
     canvas {
-      position: absolute;
       left: 0;
       top: 0;
       display: block;
