@@ -6,41 +6,43 @@ tags:
 ---
 
 <style>
-    #container {
-      position: relative;
-      width: 500px;
-      height: 500px;
-      margin: auto;
-      margin-bottom: 30px;
+    body {
+      margin: 0;
+      background: #090017;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
     canvas {
-      left: 0;
-      top: 0;
+      box-shadow: 0 0 24px #000b,
+                  0 0 0 2px #0008;
+      background: #110031;
+      border-radius: 14px;
       display: block;
-      border: 1px solid #161616;
-      z-index: 1;
+      margin-top: 30px;
     }
-    #controls {
+    .controls {
+      margin-top: 20px;
       display: flex;
-      flex-direction: row;
+      gap: 18px;
       justify-content: center;
-      gap: 20px;
-      margin-top: 0;
     }
-    #controls label {
-      font-family: monospace;
-      font-size: 15px;
-      color: #f0f0f0;
+    .label {
+      color: #fdfdfd;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-right: 7px;
+      font-family: 'Fira Mono', monospace;
+      font-size: 1.1em;
     }
-    input[type=range] {
-      width: 120px;
-    }
-    select {
-      font-family: monospace;
-      font-size: 14px;
+    .slider-value {
+      margin-left: 7px;
+      color: #faf0ff;
+      font-family: 'Fira Mono', monospace;
     }
 </style>
-
 <div id="container">
 	<canvas id="canvas" width="500" height="500"></canvas>
 	<canvas id="trailCanvas" width="500" height="500"></canvas>
