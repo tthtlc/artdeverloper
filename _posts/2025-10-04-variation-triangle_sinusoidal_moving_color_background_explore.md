@@ -7,27 +7,40 @@ tags:
 
 <style>
     body {
+      margin: 0;
+      background: #090017;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
     }
     canvas {
-      border: 1px solid black;
+      box-shadow: 0 0 24px #000b,
+                  0 0 0 2px #0008;
+      background: #110031;
+      border-radius: 14px;
+      display: block;
+      margin-top: 30px;
     }
     .controls {
+      margin-top: 20px;
       display: flex;
-      align-items: center;
-      margin-top: 10px;
+      gap: 18px;
+      justify-content: center;
     }
     .label {
-      margin-right: 10px;
+      color: #fdfdfd;
       font-weight: bold;
+      letter-spacing: 1px;
+      margin-right: 7px;
+      font-family: 'Fira Mono', monospace;
+      font-size: 1.1em;
     }
-    .slider-value, .dropdown {
-      margin-left: 10px;
+    .slider-value {
+      margin-left: 7px;
+      color: #faf0ff;
+      font-family: 'Fira Mono', monospace;
     }
 </style>
 <canvas id="vortexCanvas" width="700" height="700"></canvas>
