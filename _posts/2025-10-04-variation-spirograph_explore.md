@@ -69,9 +69,9 @@ tags:
 <script>
   document.addEventListener("contextmenu", e => e.preventDefault());
 
-  const canvas = document.getElementById('canvas');
+  //const canvas = document.getElementById('canvas');
   const trailCanvas = document.getElementById('trailCanvas');
-  const ctx = canvas.getContext('2d');
+  //const ctx = canvas.getContext('2d');
   const trailCtx = trailCanvas.getContext('2d');
   const w = canvas.width, h = canvas.height;
 
