@@ -53,7 +53,7 @@ tags:
         </div>
         <div class="control-group">
             <label for="density">Density:</label>
-            <input type="range" id="density" min="200" max="1800" step="10" value="960">
+            <input type="range" id="density" min="3" max="200" step="3" value="3">
             <span id="value-density">960</span>
         </div>
         <div class="control-group">
