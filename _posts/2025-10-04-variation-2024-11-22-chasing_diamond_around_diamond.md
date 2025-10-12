@@ -5,11 +5,38 @@ tags:
   - graphics
 ---
 
+<style>
         canvas {
             display: block;
             margin: 0 auto;
             border: 1px solid black;
         }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .control-group {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .control-group label {
+            margin-right: 10px;
+        }
+        .color-spectrum {
+            margin: 10px 0;
+            width: 300px;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+        .value-label {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+</style>
 <canvas id="psychedelicCanvas" width="700" height="700"></canvas>
 
 <script>
