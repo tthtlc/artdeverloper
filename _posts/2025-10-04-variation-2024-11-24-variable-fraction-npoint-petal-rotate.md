@@ -6,20 +6,29 @@ tags:
 ---
 
 <style>
-canvas {
-    background-color: #181818;
-    display: block;
-    margin: 0 auto;
-    border: 2px solid #444;
-}
+    body {
+        background: radial-gradient(circle, #18082c 0%, #00061c 100%);
+        margin: 0;
+    }
+    canvas {
+        display: block;
+        margin: 32px auto;
+        background: transparent;
+        border-radius: 16px;
+        box-shadow: 0 0 32px rgba(80,30,150,0.45);
+    }
     .controls {
-        margin: 12px 0;
-        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
     }
     .controls label {
         margin-right: 12px;
     }
 </style>
+
 <div class="controls">
     <label for="waveCount">Waves: <span id="waveCountValue">5</span></label>
     <input type="range" id="waveCount" min="2" max="16" step="1" value="5">
@@ -33,12 +42,47 @@ canvas {
     <label for="webDensity">Web: <span id="webDensityValue">3</span></label>
     <input type="range" id="webDensity" min="1" max="10" step="1" value="3">
 </div>
+
 <canvas id="animationCanvas" width="800" height="800"></canvas>
+<canvas id="canvas" width="800" height="800"></canvas>
 <script>
+        // ======= Canvas Setup =======
+//        const canvas = document.getElementById('canvas');
+//        const ctx = canvas.getContext('2d');
+//        const W = canvas.width, H = canvas.height;
+//        ctx.translate(W/2, H/2);
+//
+//        // Controls handling
+//        document.getElementById('density').addEventListener('input', e=>{
+//            density = Number(e.target.value);
+//        });
+//        document.getElementById('wave').addEventListener('input', e=>{
+//            waveAmp = Number(e.target.value);
+//        });
+//        document.getElementById('colorize').addEventListener('input', e=>{
+//            colorize = !!e.target.checked;
+//        });
+//
+//        // ======= Animation State =======
+//        let t0 = Date.now();
+//
+//
+//        // ======= Initial Update =======
+//        updateValueDisplay('petals', petals);
+//        updateValueDisplay('density', density);
+//        updateValueDisplay('wave', waveAmp);
+//
+//        // ======= Start =======
+//        requestAnimationFrame(animate);
+//
+
     // Setup and controls
     const canvas = document.getElementById('animationCanvas');
     const ctx = canvas.getContext('2d');
 
+        document.getElementById('petals').addEventListener('input', e=>{
+            petals = Number(e.target.value);
+        });
     const waveCount = document.getElementById('waveCount');
     const waveCountValue = document.getElementById('waveCountValue');
     let nWaves = parseInt(waveCount.value);
@@ -199,4 +243,17 @@ canvas {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     loop();
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
