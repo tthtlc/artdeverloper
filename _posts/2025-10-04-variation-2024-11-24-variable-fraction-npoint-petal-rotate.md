@@ -80,9 +80,6 @@ tags:
     const canvas = document.getElementById('animationCanvas');
     const ctx = canvas.getContext('2d');
 
-        document.getElementById('petals').addEventListener('input', e=>{
-            petals = Number(e.target.value);
-        });
     const waveCount = document.getElementById('waveCount');
     const waveCountValue = document.getElementById('waveCountValue');
     let nWaves = parseInt(waveCount.value);
