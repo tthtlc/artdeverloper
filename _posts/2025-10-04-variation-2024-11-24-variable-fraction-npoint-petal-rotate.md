@@ -6,6 +6,12 @@ tags:
 ---
 
 <style>
+canvas {
+    background-color: #181818;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #444;
+}
     .controls {
         margin: 12px 0;
         font-family: Arial, sans-serif;
