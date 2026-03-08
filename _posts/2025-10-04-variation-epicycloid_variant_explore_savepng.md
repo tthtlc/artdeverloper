@@ -226,8 +226,8 @@ tags:
                 // Each quantum layer trail
                 ctx.save();
                 ctx.globalCompositeOperation = "lighter";
-                ctx.globalAlpha = 0.14 + 0.40 * Math.sin(t*0.10 + L*0.55 + vfract(Math.sin(t*0.12 + L*0.29)));
-                ctx.lineWidth = 3.1 - 2*L/(layers-1);
+                ctx.globalAlpha = 0.45 + 0.45 * Math.sin(t*0.10 + L*0.55 + vfract(Math.sin(t*0.12 + L*0.29)));
+                ctx.lineWidth = 4.0 - 2*L/(layers-1);
                 ctx.strokeStyle = rgbStr(rgbStroke);
                 ctx.beginPath();
                 for (let p=0; p<=particles; p++) {
@@ -263,7 +263,7 @@ tags:
                     let x = cx + R * Math.cos(angle+Math.sin(t*0.021+L));
                     let y = cy + R * Math.sin(angle);
                     ctx.save();
-                    ctx.globalAlpha = 0.18 + 0.27*Math.abs(Math.sin(angle*2+t + L*1.1));
+                    ctx.globalAlpha = 0.40 + 0.40*Math.abs(Math.sin(angle*2+t + L*1.1));
                     ctx.beginPath();
                     ctx.arc(x,y, lerp(11,4,L/(layers-1)), 0, 2*Math.PI);
                     ctx.closePath();
