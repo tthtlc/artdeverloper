@@ -111,7 +111,7 @@ function selectCurve(idx) {
   if (idx === 8) { showRolling = !showRolling; return; }
   curveIdx = idx;
 }
-
+	window.selectCurve = selectCurve;
 // The curve definitions with roll data for animation
 const curves = [
   {

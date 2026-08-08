@@ -209,7 +209,7 @@ function selectCurve(idx) {
   tourMode = false;
   curveIdx = idx;
 }
-
+	window.selectCurve = selectCurve;
 function drawCurve(cx0, cy0, sc, curve, tRange, alpha, k) {
   if (curve.eq.length === 0) return;
   const N = 600;

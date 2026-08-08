@@ -218,7 +218,7 @@ function selectCurve(idx) {
   compareMode = false;
   curveIdx = idx;
 }
-
+	window.selectCurve = selectCurve;
 function drawSpiral(cx0, cy0, sc, spiral, tMax, alpha) {
   const N = 800;
   const k = slider.value / 100;

@@ -304,7 +304,7 @@ function selectCurve(idx) {
     curveIdx = idx;
   }
 }
-
+	window.selectCurve = selectCurve;
 function draw() {
   ctx.clearRect(0, 0, W, H);
 

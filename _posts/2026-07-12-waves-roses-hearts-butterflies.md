@@ -198,7 +198,7 @@ function selectCurve(idx) {
   galleryMode = false;
   curveIdx = idx;
 }
-
+	window.selectCurve = selectCurve;
 function drawCurve(cx0, cy0, sc, curve, tMax, alpha, k) {
   const N = 600;
   ctx.beginPath();
