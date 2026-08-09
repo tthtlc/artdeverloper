@@ -1,19 +1,30 @@
 ---
 layout: post
-title: "Algebraic Curiosities: Twelve Strange Curves and the Mathematicians Who Found Them"
+title: "Twelve Curves That Secretly Rule Geometry — From the Infinity Symbol to the Modern Skyscraper"
+date: 2026-08-09
+categories:
+  - Geometry
+  - Mathematics
 tags:
   - algebraic-curves
   - lemniscate
   - witch-of-agnesi
-  - folium
+  - folium-of-descartes
   - superellipse
+  - cassini-oval
   - interactive
-  - animation
-date: 2026-07-12
+  - history-of-mathematics
+share: true
+read_time: true
+excerpt: "From the infinity symbol to the shape of Stockholm's most famous roundabout, twelve algebraic curves reveal how a single polynomial equation can birth shapes of extraordinary beauty. Interactive sliders let you vary each curve's defining parameter and watch the transformation unfold in real time."
 math: true
 ---
 
-Between the 17th and 19th centuries, mathematicians discovered a menagerie of curves that defied intuition: loops that cross themselves, shapes that resemble leaves and witches' hats, and one curve so versatile it gave us the modern office building. These twelve algebraic curves — each defined by a polynomial equation — reveal how the search for geometric beauty drove centuries of discovery.
+**Challenge to the reader:** Using the interactive widget below, find the parameter value where the Cassini oval pinches into a lemniscate — the infinity symbol. Then, explain why the Folium of Descartes must cross itself at exactly one point, no matter how you vary its parameter. (Answers at the end of the post.)
+
+Between the 17th and 19th centuries, mathematicians discovered a menagerie of curves that defied intuition: loops that cross themselves, shapes that resemble leaves and witches' hats, and one curve so versatile it gave us the modern office building. These twelve algebraic curves — each defined by a single polynomial equation in $x$ and $y$ — reveal how the search for geometric beauty drove centuries of discovery. More remarkably, many of them turn out to be special cases of one another, connected by a hidden algebraic web.
+
+**Why this matters:** Algebraic curves are not museum pieces. The superellipse shapes the furniture you sit on and the roundabouts you drive through. The lemniscate appears in elliptic function theory, cryptography, and the symbol for infinity itself. Understanding these twelve curves is a tour through the engine room of analytic geometry — and the interactive sliders below let you turn the knobs yourself.
 
 <div class="curve-selector" style="margin: 1em 0;">
   <button onclick="selectCurve(0)" style="margin:2px;padding:6px 12px;cursor:pointer;">Lemniscate</button>
@@ -413,25 +424,111 @@ draw();
 
 ---
 
-## The Lemniscate: Symbol of Infinity
+## 1. The Ancient Toolkit: Curves That Solved Impossible Problems
 
-Jacob Bernoulli discovered the lemniscate in 1694 while studying elastic curves. Its figure-eight shape became the symbol for infinity (∞). The equation \\((x^2 + y^2)^2 = 2a^2(x^2 - y^2)\\) produces a curve where the product of distances to two fixed points is constant — making it a special case of the Cassini oval.
+Long before Descartes fused algebra with geometry in 1637, Greek geometers were already using curves to crack the three classical construction problems: doubling the cube, trisecting an angle, and squaring the circle. They couldn't solve them with compass and straightedge alone — so they invented curves that could.
 
-Bernoulli was so enchanted by it that he had it engraved on his tombstone with the inscription *"Eadem mutata resurgo"* — "Though changed, I shall arise the same."
+**The Cissoid of Diocles** (c. 180 BCE) was designed to double the cube. Given a cube of volume $V$, Diocles showed how his cissoid — whose name means "ivy-shaped" — could construct the edge length of a cube with volume $2V$. The curve is defined by the property that a line through the origin cuts it at a point whose distances satisfy a precise ratio. Its cusp at the origin makes it one of the earliest examples of a singular point on an otherwise smooth curve.
 
-## The Folium: Descartes' Leaf
+**The Conchoid of Nicomedes** (c. 200 BCE) cracked angle trisection. Nicomedes described it as a "shell-shaped" curve (conchoid = "mussel-like"). Fix a line and a point not on it; the conchoid is the locus of points at a fixed distance from the line, measured along rays through the fixed point. By constructing a specific conchoid, any angle can be trisected — a problem that stumped geometers using only straightedge and compass.
 
-In 1638, Descartes challenged Fermat to find the tangent to \\(x^3 + y^3 = 3axy\\). Fermat succeeded, humiliating Descartes — who retaliated by claiming Fermat's method wasn't general enough. The resulting "leaf" has a self-intersection at the origin, and its area was one of the first non-trivial successes of integral calculus.
+**The Kampyle of Eudoxus** (c. 350 BCE) is the oldest curve in our collection. Its name means "bent" or "curved" in Greek — and it looks exactly like a flexed bow. Eudoxus, the father of the method of exhaustion (a precursor to integration), used it in his astronomical models. With equation $x^4 = a^2(x^2 + y^2)$, it's a quartic curve that was cutting-edge mathematics two millennia before calculus.
 
-## The Witch That Wasn't
+**Challenge:** Why does the cissoid have a cusp at the origin? Trace the parametric path as $t \to 0$ and explain geometrically what happens to the tangent direction. Hint: compute $\lim_{t \to 0} dy/dx$ from the parametric form.
 
-Maria Gaetana Agnesi published the first comprehensive calculus textbook by a woman in 1748. The curve \\(y = a^3/(x^2 + a^2)\\) was called *versiera* in Italian. When John Colson translated her work into English, he mistook *versiera* for *avversiera* ("witch"). The name stuck — a permanent monument to a translation error, and to Agnesi's remarkable achievement.
+---
 
-## The Superellipse: From Math to Architecture
+## 2. The Baroque Garden: Curves of the 17th and 18th Centuries
 
-Gabriel Lamé generalised the ellipse in 1818: \\(|x/a|^n + |y/b|^n = 1\\). For \\(n = 2\\) you get an ellipse; for larger \\(n\\), the shape becomes increasingly rectangular. In 1959, Piet Hein applied the superellipse to urban design — the Sergels Torg roundabout in Stockholm is a superellipse. He also designed the "superegg," a three-dimensional superellipse that stands upright on a flat surface, defying intuition.
+The invention of analytic geometry by Descartes and Fermat in the 1630s unleashed a flood of new curves. Every polynomial equation in $x$ and $y$ became fair game — and mathematicians competed to find the strangest, most beautiful specimens.
 
-**Use the slider** to vary each curve's defining parameter and watch the shape transform. Click **Auto-Tour** to sit back and let the curves introduce themselves.
+**The Folium of Descartes** (1638). Descartes challenged Fermat to find the tangent to $x^3 + y^3 = 3axy$. Fermat succeeded, humiliating Descartes — who retaliated by claiming Fermat's method wasn't general enough. The resulting "leaf" has a self-intersection at the origin, and its area was one of the first non-trivial successes of integral calculus. Move the slider to see the loop swell and the asymptote shift.
+
+**The Lemniscate of Bernoulli** (1694). Jacob Bernoulli discovered this figure-eight curve while studying elastic deformations. Its defining property is delightfully simple: the product of distances from any point on the curve to two fixed foci is constant. When this constant equals the square of half the focal distance, the oval pinches at the waist — becoming the lemniscate, a special case of the Cassini oval. Bernoulli was so enchanted that he had it engraved on his tombstone with the inscription *"Eadem mutata resurgo"* — "Though changed, I shall arise the same."
+
+**The Witch of Agnesi** (1748). Maria Gaetana Agnesi published the first comprehensive calculus textbook by a woman — *Instituzioni analitiche* — in 1748. The curve $y = a^3/(x^2 + a^2)$ appears as a gentle bell-shaped hump, which Agnesi called *versiera*. When John Colson translated her work into English, he mistook *versiera* for *avversiera* ("witch"). The name stuck — a permanent monument to a translation error, and to Agnesi's remarkable achievement as one of the first women to publish original mathematics.
+
+**Challenge:** The lemniscate's polar equation is $r^2 = 2a^2 \cos 2\theta$. Verify that this is equivalent to the Cartesian form $(x^2 + y^2)^2 = 2a^2(x^2 - y^2)$ by substituting $x = r\cos\theta$, $y = r\sin\theta$. Then use the polar form to explain why the lemniscate only exists for $\theta \in [-\pi/4, \pi/4] \cup [3\pi/4, 5\pi/4]$.
+
+---
+
+## 3. The Analytic Turn: Newton's Classification and Its Offspring
+
+In 1701, Isaac Newton classified all cubic curves into 72 types — a monumental work of systematic geometry. Several of our curves emerged from this classification project.
+
+**The Serpentine Curve.** Newton named this one himself. With equation $x^2 y + y = a x$, it snakes through the plane in a graceful S-shape. It's a cubic with an asymptote at $x = 0$ — one of the simplest curves to exhibit both a turning point and an infinite branch. The slider lets you stretch its serpentine coil and watch how the inflection point shifts.
+
+**The Cruciform.** This cross-shaped curve, known to medieval geometers but formalised later, comes from the deceptively simple equation $x^2 y^2 = a^2(x^2 + y^2)$. Its four arms extend to infinity along the axes, making it one of the few algebraic curves with asymptotes in all four cardinal directions. Despite its dramatic appearance, it is symmetric under both $x \to -x$ and $y \to -y$.
+
+**The Bullet Nose Curve.** A 19th-century favourite of artillery engineers, this curve mimics the ogive profile of a projectile — the shape that minimises air resistance at subsonic speeds. Its equation involves a cusp and a vertical asymptote, producing the characteristic blunt-tipped, gracefully tapering silhouette that you still see on rockets and high-speed trains today.
+
+**The Kite Curve.** Related to the astroid (hypocycloid of four cusps) but with independently scaled axes, this curve resembles a diamond kite. Its parametric form $x = a\cos^3 t$, $y = b\sin^3 t$ generalises the astroid by letting $a$ and $b$ differ — a simple tweak that turns a star-like shape into something entirely different.
+
+---
+
+## 4. The Modern Metamorphosis: One Equation, Infinite Shapes
+
+**The Lamé Superellipse** (1818). Gabriel Lamé generalised the ellipse by replacing the exponent $2$ with an arbitrary real number $n$:
+
+$$
+\left\lvert \frac{x}{a} \right\rvert^{\,n} + \left\lvert \frac{y}{b} \right\rvert^{\,n} = 1
+$$
+
+When $n = 2$, you get an ordinary ellipse. For $n > 2$, the shape bulges outward toward a rectangle. For $n < 1$, it pinches inward to a star-like four-pointed shape. For $n = 1$, it's a diamond. Lamé could not have predicted that, 140 years later, the Danish polymath Piet Hein would use the superellipse ($n = 2.5$) to design Stockholm's Sergels Torg roundabout — and that the "superegg," a three-dimensional superellipse, would become a bestselling novelty item because it can stand upright on either end, apparently defying gravity.
+
+**The Cassini Oval** (1680). Giovanni Domenico Cassini, the astronomer who discovered the gap in Saturn's rings, proposed that planets move along these ovals rather than Keplerian ellipses. He was wrong about planetary orbits — but his curves turned out to be mathematically richer than ellipses. The Cassini oval is the locus of points whose *product* of distances to two fixed foci is constant (compare: an ellipse uses the *sum*). As the slider moves, you see the oval morph through three topological regimes: a single loop, a pinched figure-eight (the lemniscate!), and two separate loops. One family, three distinct topological phases — a miniature lesson in bifurcation theory.
+
+**Challenge:** At what critical parameter value does the Cassini oval transition from a single loop to two separate ovals? Express your answer in terms of the focal half-distance $c$ and the constant product $a^2$. Then verify your prediction using the interactive slider — does the visual match the algebra?
+
+---
+
+## 5. How the Twelve Curves Connect
+
+One of the deepest insights of algebraic geometry is that apparently unrelated curves are often connected by transformations, specialisations, or inversions.
+
+| Curve | Equation Type | Degree | Key Property | Related To |
+|---|---|---|---|---|
+| Kampyle | Implicit | 4 | Bow-shaped; oldest in collection | Conchoid (shared polar structure) |
+| Cissoid | Implicit | 3 | Cusp at origin; cube-doubling | Witch (inversion in a circle) |
+| Conchoid | Implicit | 4 | Angle trisection; polar form | Kampyle |
+| Lemniscate | Implicit | 4 | Product of distances = constant | Cassini (degenerate case), elliptic functions |
+| Folium | Implicit | 3 | Self-intersecting loop; first calculus area | — |
+| Witch | Rational | 3 | Bell-shaped; mistranslated name | Cissoid (inversion) |
+| Serpentine | Implicit | 3 | S-shaped; Newton-classified | — |
+| Cruciform | Implicit | 4 | Four infinite arms; asymptotes on axes | — |
+| Bullet Nose | Implicit | 3 | Cusp + asymptote; ogive profile | — |
+| Kite | Parametric | — | Scaled astroid; diamond shape | Astroid, Superellipse |
+| Superellipse | Implicit | $n$-dependent | One family: star → diamond → circle → square | Lamé curve family, Piet Hein design |
+| Cassini Oval | Implicit | 4 | Three topological regimes in one family | Lemniscate (special case $a = c$) |
+
+The most striking connection: the Witch of Agnesi and the Cissoid of Diocles are *inverses* of each other with respect to a suitably chosen circle. Two curves, separated by two millennia and discovered for entirely different purposes, turn out to be geometric mirror images under inversion.
+
+---
+
+## 6. Deeper Significance: Why These Curves Still Matter
+
+These twelve curves are not dusty antiques. They encode a profound lesson about mathematics itself: **simple polynomial equations in two variables generate an astonishing variety of topological behaviours.** The same equation family that gives you a smooth oval can, with a small parameter tweak, produce a self-intersecting loop or a pair of disconnected lobes. This sensitivity — technically, a *bifurcation* — is the same phenomenon that appears in dynamical systems, fluid mechanics, and population biology.
+
+The lemniscate reappears in the theory of elliptic functions and elliptic curves — the same elliptic curves that underpin modern cryptography (ECC) and were central to Andrew Wiles's proof of Fermat's Last Theorem. The superellipse taught designers that a single continuous parameter can interpolate between radically different aesthetic regimes — a principle now embedded in parametric CAD software used to design everything from cars to coffee cups.
+
+And the Cassini oval? Its three-regime topology (one loop → pinched lemniscate → two loops) is a textbook example of a *phase transition* in a two-parameter family — the same mathematical structure that describes liquid–gas transitions in thermodynamics. When you drag the Cassini slider and watch the oval tear itself in two, you're watching the geometric twin of water boiling into steam.
+
+**Use the slider** to vary each curve's defining parameter and watch the shape transform. Click **Auto-Tour** to sit back and let the curves introduce themselves in sequence.
+
+---
+
+## 7. Final Challenge
+
+**Synthesis challenge:** Choose any two curves from the collection. Prove that one is the *inverse* of the other with respect to a suitably chosen circle. (Hint: the Witch of Agnesi and the Cissoid of Diocles are inverses of each other. Start by writing both in polar form and applying the inversion transformation $r \to 1/r$. You'll also need to translate the centre of inversion to the right point.)
+
+Then, using the interactive widget, find the parameter value where the Cassini oval becomes the lemniscate. Compute the product of distances from any point on the lemniscate to the two foci — verify that it matches the defining constant $c^2$, where $c$ is the focal half-distance. Does your slider observation match the algebraic condition $a = c$?
+
+---
+
+**Answers to opening challenges:**
+
+- **Cassini → lemniscate:** The transition occurs when the constant product $a^2$ equals $c^2$ (the square of the focal half-distance). At this value, the oval pinches to a figure-eight — the lemniscate of Bernoulli.
+- **Folium self-intersection:** The Folium's equation $x^3 + y^3 = 3axy$ is symmetric under swapping $x$ and $y$. At the origin $(0,0)$, the curve approaches along two distinct branches (one with slope $0$, one with infinite slope), forcing a self-intersection regardless of the parameter $a$.
 
 <style>
 .curve-selector button { transition: all 0.2s; }
