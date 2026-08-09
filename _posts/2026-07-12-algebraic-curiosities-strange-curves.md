@@ -498,7 +498,7 @@ One of the deepest insights of algebraic geometry is that apparently unrelated c
 | Cruciform | Implicit | 4 | Four infinite arms; asymptotes on axes | — |
 | Bullet Nose | Implicit | 3 | Cusp + asymptote; ogive profile | — |
 | Kite | Parametric | — | Scaled astroid; diamond shape | Astroid, Superellipse |
-| Superellipse | Implicit | $n$-dependent | One family: star → diamond → circle → square | Lamé curve family, Piet Hein design |
+| Superellipse | Implicit | $n$-dependent | One family: star $\to$ diamond $\to$ circle $\to$ square | Lamé curve family, Piet Hein design |
 | Cassini Oval | Implicit | 4 | Three topological regimes in one family | Lemniscate (special case $a = c$) |
 
 The most striking connection: the Witch of Agnesi and the Cissoid of Diocles are *inverses* of each other with respect to a suitably chosen circle. Two curves, separated by two millennia and discovered for entirely different purposes, turn out to be geometric mirror images under inversion.
@@ -511,7 +511,7 @@ These twelve curves are not dusty antiques. They encode a profound lesson about 
 
 The lemniscate reappears in the theory of elliptic functions and elliptic curves — the same elliptic curves that underpin modern cryptography (ECC) and were central to Andrew Wiles's proof of Fermat's Last Theorem. The superellipse taught designers that a single continuous parameter can interpolate between radically different aesthetic regimes — a principle now embedded in parametric CAD software used to design everything from cars to coffee cups.
 
-And the Cassini oval? Its three-regime topology (one loop → pinched lemniscate → two loops) is a textbook example of a *phase transition* in a two-parameter family — the same mathematical structure that describes liquid–gas transitions in thermodynamics. When you drag the Cassini slider and watch the oval tear itself in two, you're watching the geometric twin of water boiling into steam.
+And the Cassini oval? Its three-regime topology (one loop $\to$ pinched lemniscate $\to$ two loops) is a textbook example of a *phase transition* in a two-parameter family — the same mathematical structure that describes liquid-gas transitions in thermodynamics. When you drag the Cassini slider and watch the oval tear itself in two, you're watching the geometric twin of water boiling into steam.
 
 **Use the slider** to vary each curve's defining parameter and watch the shape transform. Click **Auto-Tour** to sit back and let the curves introduce themselves in sequence.
 
@@ -527,7 +527,7 @@ Then, using the interactive widget, find the parameter value where the Cassini o
 
 **Answers to opening challenges:**
 
-- **Cassini → lemniscate:** The transition occurs when the constant product $a^2$ equals $c^2$ (the square of the focal half-distance). At this value, the oval pinches to a figure-eight — the lemniscate of Bernoulli.
+- **Cassini $\to$ lemniscate:** The transition occurs when the constant product $a^2$ equals $c^2$ (the square of the focal half-distance). At this value, the oval pinches to a figure-eight — the lemniscate of Bernoulli.
 - **Folium self-intersection:** The Folium's equation $x^3 + y^3 = 3axy$ is symmetric under swapping $x$ and $y$. At the origin $(0,0)$, the curve approaches along two distinct branches (one with slope $0$, one with infinite slope), forcing a self-intersection regardless of the parameter $a$.
 
 <style>
