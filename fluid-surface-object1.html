@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluid Surface Object</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --space-2: 0.5rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --radius-full: 9999px;
+      --color-bg: #030303;
+      --color-surface: rgba(255,255,255,0.04);
+      --color-border: rgba(255,255,255,0.11);
+      --color-text: #f4f1ea;
+      --color-text-muted: rgba(244,241,234,0.72);
+      --font-body: 'Satoshi', 'Inter', sans-serif;
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.45);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; background: var(--color-bg); color: var(--color-text); }
+    body {
+      font-family: var(--font-body);
+      overflow: hidden;
+      line-height: 1.5;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04), transparent 35%),
+        radial-gradient(circle at 50% 85%, rgba(255,140,0,0.07), transparent 18%),
+        #000;
+    }
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem; background: #fff; color: #000; padding: 0.75rem 1rem; z-index: 20;
+    }
+    .skip-link:focus { top: 1rem; }
+    main { position: relative; width: 100%; height: 100%; }
+    canvas { width: 100%; height: 100%; display: block; }
+    .hud {
+      position: absolute;
+      inset: auto 0 0 0;
+      display: flex;
+      justify-content: center;
+      padding: var(--space-6);
+      pointer-events: none;
+    }
+    .panel {
+      pointer-events: auto;
+      display: flex;
+      gap: var(--space-6);
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      background: color-mix(in srgb, black 68%, transparent);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(14px);
+      max-width: min(92vw, 980px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 14rem;
+    }
+    .brand svg { width: 2.1rem; height: 2.1rem; color: #fff; }
+    .brand strong { display: block; font-size: var(--text-sm); letter-spacing: 0.04em; text-transform: uppercase; }
+    .brand span { display: block; color: var(--color-text-muted); font-size: var(--text-xs); }
+    .controls { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    label { font-size: var(--text-xs); color: var(--color-text-muted); display: grid; gap: 0.35rem; }
+    input[type="range"] {
+      width: min(26vw, 10rem);
+      accent-color: #ffffff;
+    }
+    .chip {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      padding: 0.5rem 0.75rem;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      background: rgba(255,255,255,0.03);
+    }
+    @media (max-width: 720px) {
+      .panel { border-radius: 1.25rem; justify-content: center; }
+      .brand { min-width: auto; text-align: center; justify-content: center; width: 100%; }
+      .controls { justify-content: center; }
+      input[type="range"] { width: 8rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .chip::after { content: ' Reduced motion supported'; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#artwork">Skip to content</a>
+  <main>
+    <canvas id="artwork" aria-label="Animated fluid color object" role="img"></canvas>
+    <div class="hud">
+      <section class="panel" aria-label="Animation controls">
+        <div class="brand">
+          <svg viewBox="0 0 64 64" fill="none" aria-label="Fluid surface logo">
+            <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2.5" opacity="0.8"/>
+            <path d="M17 32c8-13 22-13 30 0-8 13-22 13-30 0Z" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M32 17c13 8 13 22 0 30-13-8-13-22 0-30Z" stroke="currentColor" stroke-width="2.5" opacity="0.75"/>
+          </svg>
+          <div>
+            <strong>Fluid Surface Object</strong>
+            <span>Interference fields mapped onto a luminous sphere</span>
+          </div>
+        </div>
+        <div class="controls">
+          <label>Flow
+            <input id="flow" type="range" min="0" max="1.8" step="0.01" value="0.78" />
+          </label>
+          <label>Hue Drift
+            <input id="hue" type="range" min="0" max="2.2" step="0.01" value="1.16" />
+          </label>
+          <label>Filament
+            <input id="filament" type="range" min="0.3" max="2.6" step="0.01" value="1.42" />
+          </label>
+          <div class="chip">Drag to orbit · Wheel to zoom</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const canvas = document.getElementById('artwork');
+    const ctx = canvas.getContext('2d');
+    const controls = {
+      flow: document.getElementById('flow'),
+      hue: document.getElementById('hue'),
+      filament: document.getElementById('filament')
+    };
+
+    const state = {
+      w: 0,
+      h: 0,
+      dpr: Math.min(window.devicePixelRatio || 1, 2),
+      time: 0,
+      rotationX: 0.16,
+      rotationY: 0.0,
+      zoom: 1,
+      dragging: false,
+      lastX: 0,
+      lastY: 0,
+      reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    };
+
+    function resize() {
+      state.w = window.innerWidth;
+      state.h = window.innerHeight;
+      state.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(state.w * state.dpr);
+      canvas.height = Math.floor(state.h * state.dpr);
+      canvas.style.width = state.w + 'px';
+      canvas.style.height = state.h + 'px';
+      ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+    }
+
+    function rotate(point, ax, ay) {
+      let { x, y, z } = point;
+      const cx = Math.cos(ax), sx = Math.sin(ax);
+      const cy = Math.cos(ay), sy = Math.sin(ay);
+      let y1 = y * cx - z * sx;
+      let z1 = y * sx + z * cx;
+      let x2 = x * cy + z1 * sy;
+      let z2 = -x * sy + z1 * cy;
+      return { x: x2, y: y1, z: z2 };
+    }
+
+    function field(theta, phi, t, params) {
+      const s1 = Math.sin(6 * theta + 4 * Math.sin(phi * 3.0 + t * 0.6 * params.flow) + t * 0.9 * params.flow);
+      const s2 = Math.cos(7 * phi - 3 * Math.cos(theta * 2.0 - t * 0.4 * params.flow));
+      const s3 = Math.sin(5 * (theta + phi) + t * 1.1 * params.flow + 2.2 * Math.sin(phi * 5.0));
+      const s4 = Math.cos(9 * theta - 7 * phi + t * 0.7 * params.flow);
+      return 0.42 * s1 + 0.28 * s2 + 0.2 * s3 + 0.1 * s4;
+    }
+
+    function hueColor(v, depth, t, params) {
+      const hue = (220 + 170 * Math.sin(v * 2.7 + t * 0.35 * params.hue) + 100 * Math.sin(depth * 3.2 - t * 0.22 * params.hue) + 360) % 360;
+      const sat = 88 + 10 * Math.sin(v * 4.0 + depth * 4.0);
+      const light = 56 + 18 * depth + 10 * Math.sin(v * 5.0 - t * 0.4);
+      return `hsla(${hue.toFixed(1)} ${sat.toFixed(1)}% ${light.toFixed(1)}% / 0.8)`;
+    }
+
+    function draw(timeStamp) {
+      const t = state.reducedMotion ? 18 : timeStamp * 0.001;
+      state.time = t;
+      const params = {
+        flow: parseFloat(controls.flow.value),
+        hue: parseFloat(controls.hue.value),
+        filament: parseFloat(controls.filament.value)
+      };
+
+      ctx.clearRect(0, 0, state.w, state.h);
+      ctx.fillStyle = 'rgba(0,0,0,0.22)';
+      ctx.fillRect(0, 0, state.w, state.h);
+
+      const cx = state.w * 0.5;
+      const cy = state.h * 0.49;
+      const radius = Math.min(state.w, state.h) * 0.34 * state.zoom;
+      const focal = radius * 2.35;
+      const rings = 42;
+      const segments = 180;
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 0; i < rings; i++) {
+        const phi = ((i + 0.5) / rings - 0.5) * Math.PI;
+        const cosPhi = Math.cos(phi);
+        const sinPhi = Math.sin(phi);
+        let previous = null;
+        for (let j = 0; j <= segments; j++) {
+          const theta = (j / segments) * Math.PI * 2;
+          const base = {
+            x: Math.cos(theta) * cosPhi,
+            y: sinPhi,
+            z: Math.sin(theta) * cosPhi
+          };
+          const warpA = field(theta, phi, t, params);
+          const warpB = field(theta + 0.06, phi - 0.05, t + 1.7, params);
+          const shell = 1 + 0.06 * warpA;
+          const p = rotate({ x: base.x * shell, y: base.y * shell, z: base.z * shell }, state.rotationX, state.rotationY);
+          const depth = (p.z + 1) * 0.5;
+          const px = cx + (p.x * radius * (1 + 0.08 * warpB)) / (1 + p.z / 3 + 0.45);
+          const py = cy + (p.y * radius * (1 + 0.08 * warpA)) / (1 + p.z / 3 + 0.45);
+          const fil = Math.abs(warpA - warpB);
+          if (previous) {
+            const emphasis = Math.pow(Math.max(0, 1 - Math.min(fil * 2.8 * params.filament, 1)), 6.0);
+            if (emphasis > 0.045) {
+              ctx.strokeStyle = hueColor(warpA + warpB, depth, t, params);
+              ctx.lineWidth = 0.25 + emphasis * 2.6 + depth * 1.25;
+              ctx.beginPath();
+              ctx.moveTo(previous.x, previous.y);
+              ctx.lineTo(px, py);
+              ctx.stroke();
+            }
+          }
+          previous = { x: px, y: py };
+        }
+      }
+
+      for (let k = 0; k < 520; k++) {
+        const a = (k / 520) * Math.PI * 2;
+        const b = Math.asin(Math.sin(a * 5.0 + t * 0.13) * 0.75);
+        const w = field(a * 1.7, b, t + k * 0.002, params);
+        const unit = rotate({
+          x: Math.cos(a) * Math.cos(b),
+          y: Math.sin(b),
+          z: Math.sin(a) * Math.cos(b)
+        }, state.rotationX, state.rotationY);
+        const depth = (unit.z + 1) * 0.5;
+        const sparkle = Math.max(0, 1 - Math.abs(w) * 3.6);
+        if (sparkle > 0.32) {
+          const x = cx + unit.x * radius * (1 + w * 0.12) / (1 + unit.z / 3 + 0.45);
+          const y = cy + unit.y * radius * (1 + w * 0.12) / (1 + unit.z / 3 + 0.45);
+          const g = ctx.createRadialGradient(x, y, 0, x, y, 10 + sparkle * 16);
+          g.addColorStop(0, hueColor(w + 0.2, depth, t + 0.4, params).replace('/ 0.8)', '/ 0.92)'));
+          g.addColorStop(1, 'rgba(0,0,0,0)');
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(x, y, 6 + sparkle * 7, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius * 1.01, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+
+      if (!state.reducedMotion) requestAnimationFrame(draw);
+    }
+
+    canvas.addEventListener('pointerdown', (event) => {
+      state.dragging = true;
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
+      canvas.setPointerCapture(event.pointerId);
+    });
+
+    canvas.addEventListener('pointermove', (event) => {
+      if (!state.dragging) return;
+      const dx = event.clientX - state.lastX;
+      const dy = event.clientY - state.lastY;
+      state.rotationY += dx * 0.005;
+      state.rotationX += dy * 0.005;
+      state.rotationX = Math.max(-1.3, Math.min(1.3, state.rotationX));
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
+    });
+
+    canvas.addEventListener('pointerup', () => { state.dragging = false; });
+    canvas.addEventListener('pointerleave', () => { state.dragging = false; });
+    canvas.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      state.zoom *= event.deltaY > 0 ? 0.94 : 1.06;
+      state.zoom = Math.max(0.68, Math.min(1.55, state.zoom));
+    }, { passive: false });
+
+    window.addEventListener('resize', () => {
+      resize();
+      if (state.reducedMotion) draw(performance.now());
+    });
+
+    resize();
+    draw(performance.now());
+  </script>
+</body>
+</html>

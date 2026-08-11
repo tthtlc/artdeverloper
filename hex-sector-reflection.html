@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hex Sector Reflection</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-bg: #000000;
+      --color-text: #f5f2ea;
+      --color-muted: rgba(245,242,234,0.72);
+      --color-border: rgba(255,255,255,0.12);
+      --color-panel: rgba(255,255,255,0.045);
+      --radius-lg: 1.15rem;
+      --radius-full: 9999px;
+      --space-2: 0.5rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --font-body: 'Satoshi', 'Inter', sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--color-bg); color: var(--color-text); }
+    body {
+      font-family: var(--font-body);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.035), transparent 36%),
+        radial-gradient(circle at 50% 83%, rgba(255,159,64,0.08), transparent 18%),
+        #000;
+    }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem; background: #fff; color: #000; padding: 0.75rem 1rem; z-index: 30;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    main { position: relative; min-height: 100vh; display: grid; place-items: center; }
+    canvas { width: min(100vw, 100vh); height: min(100vw, 100vh); display: block; }
+
+    .overlay {
+      position: fixed;
+      left: 50%;
+      bottom: 1.25rem;
+      transform: translateX(-50%);
+      width: min(92vw, 880px);
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .panel {
+      pointer-events: auto;
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 0.9rem 1.1rem;
+      background: color-mix(in srgb, black 64%, transparent);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .mark svg { width: 2.2rem; height: 2.2rem; }
+    .mark strong {
+      display: block;
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .mark span { display: block; font-size: var(--text-xs); color: var(--color-muted); }
+    .pill {
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      color: var(--color-muted);
+      font-size: var(--text-xs);
+      background: rgba(255,255,255,0.03);
+    }
+
+    @media (max-width: 720px) {
+      .panel { border-radius: var(--radius-lg); }
+      .mark { width: 100%; justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#hex-art">Skip to content</a>
+  <main>
+    <canvas id="hex-art" aria-label="Static six-sector reflected line artwork" role="img"></canvas>
+  </main>
+
+  <div class="overlay" aria-hidden="true">
+    <div class="panel">
+      <div class="mark">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 8 50 19v22L32 52 14 41V19 32Z" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M32 8v44M14 19l36 22M50 19 14 41" stroke="currentColor" stroke-width="2" opacity="0.72"/>
+        </svg>
+        <div>
+          <strong>Hex Sector Reflection</strong>
+          <span>One seed wedge mirrored across six sector boundaries</span>
+        </div>
+      </div>
+      <div class="pill">Static composition</div>
+      <div class="pill">6 mirrored sectors</div>
+      <div class="pill">Reflective smoke filaments</div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('hex-art');
+    const ctx = canvas.getContext('2d');
+    const TAU = Math.PI * 2;
+    const SECTORS = 6;
+    const SECTOR_ANGLE = TAU / SECTORS;
+    const seed = 46031;
+
+    function randomFactory(seedValue) {
+      let s = seedValue >>> 0;
+      return function() {
+        s = (1664525 * s + 1013904223) >>> 0;
+        return s / 4294967296;
+      };
+    }
+
+    function resize() {
+      const side = Math.min(window.innerWidth, window.innerHeight);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(side * dpr);
+      canvas.height = Math.floor(side * dpr);
+      canvas.style.width = side + 'px';
+      canvas.style.height = side + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw();
+    }
+
+    function gradientStroke(x, y, r, hueA, hueB, width) {
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, `hsla(${hueA} 100% 72% / 0.9)`);
+      g.addColorStop(0.32, `hsla(${(hueA + hueB) * 0.5} 96% 60% / 0.56)`);
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.strokeStyle = g;
+      ctx.lineWidth = width;
+    }
+
+    function drawSeedWedge(radius) {
+      const rand = randomFactory(seed);
+      const margin = radius * 0.06;
+      const wedgeRadius = radius - margin;
+      const clip = new Path2D();
+      clip.moveTo(0, 0);
+      clip.arc(0, 0, wedgeRadius, -SECTOR_ANGLE / 2, SECTOR_ANGLE / 2);
+      clip.closePath();
+
+      ctx.save();
+      ctx.clip(clip);
+
+      for (let i = 0; i < 54; i++) {
+        const startR = wedgeRadius * (0.06 + 0.83 * Math.pow(rand(), 0.92));
+        const endR = wedgeRadius * (0.12 + 0.84 * Math.pow(rand(), 0.82));
+        const startA = (-0.47 + rand() * 0.94) * (SECTOR_ANGLE / 2);
+        const drift = (rand() * 0.55 + 0.18) * (rand() > 0.5 ? 1 : -1);
+        const c1R = startR * (0.85 + rand() * 0.45);
+        const c2R = endR * (0.8 + rand() * 0.34);
+        const c1A = startA + drift * (0.35 + rand() * 0.45);
+        const c2A = startA - drift * (0.4 + rand() * 0.52);
+        const hue = (rand() * 360) | 0;
+        const hue2 = (hue + 40 + rand() * 140) % 360;
+        const width = 0.35 + rand() * 1.9;
+
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(startA) * startR, Math.sin(startA) * startR);
+        ctx.bezierCurveTo(
+          Math.cos(c1A) * c1R, Math.sin(c1A) * c1R,
+          Math.cos(c2A) * c2R, Math.sin(c2A) * c2R,
+          Math.cos(startA + drift * 0.2) * endR, Math.sin(startA + drift * 0.2) * endR
+        );
+        gradientStroke(0, 0, wedgeRadius * (0.45 + rand() * 0.55), hue, hue2, width);
+        ctx.globalCompositeOperation = 'lighter';
+        ctx.stroke();
+
+        if (rand() > 0.42) {
+          ctx.beginPath();
+          ctx.moveTo(Math.cos(startA) * (startR * 0.96), Math.sin(startA) * (startR * 0.96));
+          const strands = 3 + (rand() * 4 | 0);
+          for (let s = 1; s <= strands; s++) {
+            const p = s / strands;
+            const rr = startR + (endR - startR) * p;
+            const aa = startA + Math.sin(p * Math.PI) * drift * (0.33 + rand() * 0.42);
+            ctx.lineTo(Math.cos(aa) * rr, Math.sin(aa) * rr);
+          }
+          ctx.strokeStyle = `hsla(${(hue + 180 + rand() * 60) % 360} 100% 78% / 0.5)`;
+          ctx.lineWidth = 0.25 + rand() * 0.75;
+          ctx.stroke();
+        }
+      }
+
+      for (let i = 0; i < 26; i++) {
+        const a = (-0.46 + rand() * 0.92) * (SECTOR_ANGLE / 2);
+        const r = wedgeRadius * (0.18 + rand() * 0.72);
+        const size = 10 + rand() * 24;
+        const hue = (rand() * 360) | 0;
+        const x = Math.cos(a) * r;
+        const y = Math.sin(a) * r;
+        const g = ctx.createRadialGradient(x, y, 0, x, y, size);
+        g.addColorStop(0, `hsla(${hue} 100% 72% / 0.85)`);
+        g.addColorStop(0.22, `hsla(${(hue + 50) % 360} 100% 60% / 0.25)`);
+        g.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, TAU);
+        ctx.fill();
+      }
+
+      ctx.restore();
+    }
+
+    function draw() {
+      const size = parseFloat(canvas.style.width) || Math.min(window.innerWidth, window.innerHeight);
+      const radius = size * 0.42;
+      const cx = size * 0.5;
+      const cy = size * 0.5;
+
+      ctx.clearRect(0, 0, size, size);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, size, size);
+
+      const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius * 1.28);
+      halo.addColorStop(0, 'rgba(255,255,255,0.018)');
+      halo.addColorStop(0.5, 'rgba(255,170,0,0.02)');
+      halo.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = halo;
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius * 1.28, 0, TAU);
+      ctx.fill();
+
+      ctx.save();
+      ctx.translate(cx, cy);
+      for (let i = 0; i < SECTORS; i++) {
+        ctx.save();
+        ctx.rotate(i * SECTOR_ANGLE);
+        if (i % 2 === 1) ctx.scale(1, -1);
+        drawSeedWedge(radius);
+        ctx.restore();
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.globalCompositeOperation = 'screen';
+      for (let i = 0; i < SECTORS; i++) {
+        const a = i * SECTOR_ANGLE;
+        const edgeGlow = ctx.createLinearGradient(0, 0, Math.cos(a) * radius, Math.sin(a) * radius);
+        edgeGlow.addColorStop(0, 'rgba(255,255,255,0.12)');
+        edgeGlow.addColorStop(0.3, 'rgba(100,180,255,0.08)');
+        edgeGlow.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.strokeStyle = edgeGlow;
+        ctx.lineWidth = 1.1;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(Math.cos(a) * radius, Math.sin(a) * radius);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx.lineWidth = 1.05;
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, TAU);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+  </script>
+</body>
+</html>
